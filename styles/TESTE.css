@@ -40,11 +40,16 @@ elements
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     position: relative;
     background-color: var(--background-color);
     font-family: var(--primary-font-family);
     color: var(--light-font-color);
+    margin-top: 130px;
 }
 
 header{
@@ -92,9 +97,9 @@ footer {
     common styles
 ---------------------------------------------------------------------- */
 
-.spacer {
+/* .spacer {
     height: 130px;
-}
+} */
 
 .container {
     width: 1280px;
@@ -180,6 +185,9 @@ footer {
     solutions section
 ---------------------------------------------------------------------- */
 
+.solutions {
+    margin-top: 120px;
+}
 
 .solutions__grid {
     padding: 1rem;
@@ -213,6 +221,9 @@ footer {
     projects section
 ---------------------------------------------------------------------- */
 
+.projects {
+    margin-top: 120px;
+}
 
 .projects__grid {
     padding: 1rem;
@@ -255,8 +266,11 @@ footer {
     about section
 ---------------------------------------------------------------------- */
 
-
 .about {
+    margin-top: 120px;
+}
+
+.about__content {
     margin: 0 2rem;
 }
 
