@@ -1,0 +1,215 @@
+/* ----------------------------------------------------------------------
+    imports
+---------------------------------------------------------------------- */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* ----------------------------------------------------------------------
+    variables
+---------------------------------------------------------------------- */
+
+
+:root {
+    --dark-color: #000000;
+    --primary-color: #1B1C1E;
+    --secondary-color: #C49C02;
+    --tertiary-color: #879BE5;
+    --primary-font-family: "Poppins", sans-serif;
+    --light-font-color: #FFFFFF;
+    --dark-font-color: #000000;
+    --primary-font-color: #777878;
+    --secondary-font-color: #879BE5;
+    --regular-font-weight: 400;
+    --medium-font-weight: 500;
+    --semi-bold-font-weight: 600;
+    --bold-font-weight: 700;
+    --background-regular-opacity: rgba(0, 0, 0, 0.5);
+}
+
+
+/* ----------------------------------------------------------------------
+    elements
+---------------------------------------------------------------------- */
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-color);
+    font-family: var(--primary-font-family);
+    color: var(--dark-font-color);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: var(--semi-bold-font-weight);
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: var(--medium-font-weight);
+}
+
+p {
+    font-size: 1rem;
+    font-weight: var(--regular-font-weight);
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark-font-color);
+}
+
+
+/* ----------------------------------------------------------------------
+    common styles
+---------------------------------------------------------------------- */
+
+
+.section-title {
+    margin: 2rem;
+    color: var(--light-font-color);
+}
+
+
+/* ----------------------------------------------------------------------
+    navbar
+---------------------------------------------------------------------- */
+
+
+.navbar {
+    height: 110px;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--tertiary-color);
+    color: var(--tertiary-font-color);
+}
+
+.navbar__logo {
+    width: 85px;
+    margin: 0 0.5rem;
+}
+
+
+.navbar__link {
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.navbar__link:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-font-color);
+    transition: 0.5s;
+}
+
+
+/* ----------------------------------------------------------------------
+    hero section
+---------------------------------------------------------------------- */
+
+
+.hero {
+    height: 425px;
+    padding: 1rem;
+    background-image: url("../assets/img/hero.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hero__title,
+.hero__content {
+    margin: 1rem;
+    padding: 1rem;
+    color: var(--light-font-color);
+    background-color: var(--background-regular-opacity);
+    border-radius: 10px;
+}
+
+.hero__title {
+    width: 35%;
+    text-align: center;
+}
+
+.hero__content {
+    width: 65%;
+}
+
+
+/* ----------------------------------------------------------------------
+    solutions section
+---------------------------------------------------------------------- */
+
+
+.solutions {
+    padding: 3rem 1rem;
+}    
+
+.solutions__card-grid {
+    margin: 0;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px 20px;
+}
+  
+.solutions__card {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.solutions__card-img {
+    width: 50px;
+}
+
+.solutions__card-title {
+    color: var(--secondary-font-color);
+}
+
+.solutions__card-text {
+    color: var(--primary-font-color);
+}
+
+
+/* ----------------------------------------------------------------------
+    about section
+---------------------------------------------------------------------- */
+
+
+.about {
+    height: 100vh;
+    margin: 0 10em;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+  }
+
+.about__img {
+    width: 80%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+  
+.about__description-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--light-font-color);
+    margin-bottom: 0.1em;
+}
+  
+.about__description-text {
+    color: var(--primary-font-color);
+}
+
+.about__description {
+    padding: 2em;
+}

@@ -1,0 +1,381 @@
+/* ----------------------------------------------------------------------
+    imports
+---------------------------------------------------------------------- */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* ----------------------------------------------------------------------
+    variables
+---------------------------------------------------------------------- */
+
+
+:root {
+    --dark-color: #000000;
+    --primary-color: #1B1C1E;
+    --secondary-color: #C49C02;
+    --tertiary-color: #879BE5;
+    --primary-font-family: "Poppins", sans-serif;
+    --light-font-color: #FFFFFF;
+    --dark-font-color: #000000;
+    --primary-font-color: #777878;
+    --secondary-font-color: #879BE5;
+    --regular-font-weight: 400;
+    --medium-font-weight: 500;
+    --semi-bold-font-weight: 600;
+    --bold-font-weight: 700;
+    --background-color: #141316;
+    --background-regular-opacity: rgba(0, 0, 0, 0.5);
+}
+
+
+/* ----------------------------------------------------------------------
+elements
+---------------------------------------------------------------------- */
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    background-color: var(--background-color);
+    font-family: var(--primary-font-family);
+    color: var(--light-font-color);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--tertiary-color);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: var(--semi-bold-font-weight);
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: var(--medium-font-weight);
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: var(--regular-font-weight);
+}
+
+p {
+    font-size: 1rem;
+    font-weight: var(--regular-font-weight);
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark-font-color);
+}
+
+li {
+    list-style: none;
+}
+
+footer {
+    background-color: var(--primary-color);
+}
+
+
+/* ----------------------------------------------------------------------
+    common styles
+---------------------------------------------------------------------- */
+
+.spacer {
+    height: 130px;
+}
+
+.container {
+    width: 1280px;
+    margin: auto;
+}
+
+.section-title {
+    margin-left: 5rem;
+}
+
+
+/* ----------------------------------------------------------------------
+    navbar
+---------------------------------------------------------------------- */
+
+
+.navbar {
+    width: 95%;
+    height: 110px;
+    margin: auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--tertiary-font-color);
+}
+
+.navbar__logo {
+    width: 85px;
+    margin: 0 0.5rem;
+}
+
+.navbar__logo:hover {
+    width: 93px;
+    margin: 0 0.25rem;
+    transition: 0.75s;
+}
+
+
+.navbar__link {
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.navbar__link:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-font-color);
+    transition: 0.5s;
+}
+
+
+/* ----------------------------------------------------------------------
+    hero section
+---------------------------------------------------------------------- */
+
+
+.hero {
+    height: 425px;
+    padding: 1rem;
+    background-image: url("../assets/img/hero.png");
+    background-size: cover;
+    border-radius: 5px;
+    display: flex;
+}
+
+.hero__grid {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 1rem;
+    place-items: center;
+}
+
+.hero__card {
+    padding: 1rem;
+    background-color: var(--background-regular-opacity);
+    color: var(--light-font-color);
+    border-radius: 10px;
+    
+}
+
+
+/* ----------------------------------------------------------------------
+    solutions section
+---------------------------------------------------------------------- */
+
+
+.solutions__grid {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+  
+.solutions__card {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.solutions__card-img {
+    width: 50px;
+}
+
+.solutions__card-title {
+    color: var(--secondary-font-color);
+}
+
+.solutions__card-text {
+    color: var(--primary-font-color);
+}
+
+
+/* ----------------------------------------------------------------------
+    projects section
+---------------------------------------------------------------------- */
+
+
+.projects__grid {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+  
+.projects__card {
+    grid-column: 1 / span 2;
+    display: flex;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+  
+.projects__card-img {
+    width: 300px;
+    height: 280px;
+    object-fit: cover;
+}
+  
+.projects__card-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+  
+.projects__card-title {
+    color: var(--secondary-color);
+}
+ 
+.projects__card-text {
+    color: var(--primary-font-color);
+}
+
+
+/* ----------------------------------------------------------------------
+    about section
+---------------------------------------------------------------------- */
+
+
+.about {
+    margin: 0 2rem;
+}
+
+.about__grid {
+    margin: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.about__img {
+    width: 80%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+  
+.about__description {
+    padding: 1rem;
+}
+
+.about__description-title {
+    color: var(--secondary-font-color);
+}    
+
+.about__description-text {
+    color: var(--primary-font-color);
+}    
+
+
+/* ----------------------------------------------------------------------
+    numbers section
+---------------------------------------------------------------------- */
+
+
+.numbers-bg {
+    height: 400px;
+    background-image: url("../assets/img/blue-lines.png");
+    display: flex;
+}
+
+.numbers {
+    text-align: center;
+}    
+
+.numbers__grid {
+    margin: 0;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+  
+.numbers__card {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-regular-opacity);
+    border-radius: 10px;
+}
+
+.numbers__card-title {
+    color: var(--secondary-color);
+    font-weight: var(--medium-font-weight);
+}
+
+.numbers__card-text {
+    color: var(--primary-font-color);
+}
+
+
+/* ----------------------------------------------------------------------
+    footer
+---------------------------------------------------------------------- */
+
+
+.footer {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__text {
+    font-size: 0.8rem;
+    color: var(--primary-font-color);
+}
+
+.partners-content {
+    padding: 0.5rem;
+    background-color: var(--primary-font-color);
+    border-radius: 5px;
+}
+
+.partners-content h3 {
+    margin: 0.5rem;
+}
+
+.partners-img {
+    height: 15px;
+    margin: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+@media(max-width: 1280px) {
+    .container {
+        width: 100%;
+    }
+}
