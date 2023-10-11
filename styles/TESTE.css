@@ -49,7 +49,7 @@ body {
     background-color: var(--background-color);
     font-family: var(--primary-font-family);
     color: var(--light-font-color);
-    margin-top: 130px;
+    margin-top: 110px;
 }
 
 header{
@@ -138,17 +138,37 @@ footer {
     transition: 0.75s;
 }
 
+.navbar__menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
 
 .navbar__link {
-    padding: 0.5rem;
     border-radius: 5px;
+    display: inline-block;
+    position: relative;
 }
 
 .navbar__link:hover {
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
     color: var(--light-font-color);
-    transition: 0.5s;
+    transition: 0.3s;
 }
+
+.navbar__link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0px;
+    transition: 0.3s;
+    position: absolute;
+    background-color: var(--secondary-color);
+  }
+
+  .navbar__link:hover::after {
+    width: 100%;
+  }
 
 
 /* ----------------------------------------------------------------------
@@ -177,9 +197,40 @@ footer {
     background-color: var(--background-regular-opacity);
     color: var(--light-font-color);
     border-radius: 10px;
-    
 }
 
+.hero-img {
+  background-image: url("/assets/img/hero.png");
+  min-height: 700px; 
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/* ----------------------------------------------------------------------
+    welcome section
+---------------------------------------------------------------------- */
+
+.welcome {
+    margin-top: 120px;
+}
+
+.welcome h2 {
+    margin-left: 100px;
+    font-style: italic;
+}
+
+.welcome p {
+    padding: 1rem;
+    text-align: justify;
+}
 
 /* ----------------------------------------------------------------------
     solutions section
@@ -349,29 +400,36 @@ footer {
 
 
 .footer {
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 .footer__content {
+    margin: 0 2rem;
     display: flex;
     flex-direction: column;
 }
+
 
 .footer__text {
     font-size: 0.8rem;
     color: var(--primary-font-color);
 }
 
-.partners-content {
+.footer__partners {
+    margin: 0 2rem;
+}
+
+.footer__partners__content {
     padding: 0.5rem;
     background-color: var(--primary-font-color);
     border-radius: 5px;
 }
 
-.partners-content h3 {
+.footer__partners h3 {
     margin: 0.5rem;
 }
 
@@ -391,5 +449,9 @@ footer {
 @media(max-width: 1280px) {
     .container {
         width: 100%;
+    }
+
+    .solutions__grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
