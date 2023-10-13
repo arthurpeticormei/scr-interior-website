@@ -16,8 +16,6 @@ function showNavbar() {
 let sections = document.querySelectorAll(".section");
 let navbarLinks = document.querySelectorAll(".navbar-link");
 
-// let fadeInElements = document.querySelectorAll("[data-fadeInDirection]")
-
 function highlightNavbarLinks() {
   sections.forEach(section => {
     let top = window.scrollY;
@@ -30,14 +28,40 @@ function highlightNavbarLinks() {
         navbarLink.classList.remove("active");
         document.querySelector(".navbar-link[href*=" + id + "]").classList.add("active");
       });
-      // fadeInElements.forEach(fadeInElement => {
-      //   let direction = fadeInElement.dataset.fadeInDirection;
 
-
-      //   fadeInElement.classList.remove("active");
-      //   document.querySelector(".navbar-link[href*=" + id + "]").classList.add("active");
-      // });
     }
   });
 }
 
+
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      let fadeInElements = document.querySelectorAll("[data-fadeInDirection]");
+      fadeInElements.forEach(fadeInElement => {
+        let direction = fadeInElement.dataset.fadeindirection;
+        console.log(fadeInElement);
+        switch (direction) {
+          case 'top':
+            fadeInElement.classList.add("fadeInTop");
+            break;
+          case 'bottom':
+            fadeInElement.classList.add("fadeInBottom");
+            break;
+          case 'left':
+            fadeInElement.classList.add("fadeInLeft");
+            break;
+          case 'right':
+            fadeInElement.classList.add("fadeInRight");
+          break;
+        }
+      });
+    };
+  });
+});
+
+const fadeInElementsContainers = document.querySelectorAll("[data-fadeIn]");
+fadeInElementsContainers.forEach(fadeInElementsContainer => {
+  observer.observe(fadeInElementsContainer);
+})
