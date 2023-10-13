@@ -43,45 +43,69 @@ function highlightNavbarLink() {
 }
 
 
-// ##### fade in effect direction #####
+// ##### fade in effect function #####
 
-// const fadeInContainerElements = document.querySelectorAll("[data-fadeInEffectContainer]");
-// const fadeInElements = document.querySelectorAll("[data-fadeInEffectDirection]");
+const fadeInContainerElements = document.querySelectorAll("[data-fadeInEffectContainerId]");
 
-// function fadeInEffect() {
+function fadeInEffect() {
 
+  fadeInContainerElements.forEach(fadeInContainerElement => {
 
-//   fadeInContainerElements.forEach(fadeInContainerElement => {
-
-//     let top = window.scrollY;
-//     let offset = fadeInContainerElement.offsetTop;
-//     let id = fadeInElement.dataset.fadeineffectid;
-
-//     let matchId = document.querySelector("[data-fadeInEffectDirection][href*=" + id + "]")
+    let fadeInContainerElementId = fadeInContainerElement.dataset.fadeineffectcontainerid;
+    let height = fadeInContainerElement.offsetHeight;
+    let top = window.scrollY + window.innerHeight;
     
-//     if(top >= offset) {
-//       fadeInElements.forEach(fadeInElement => {
-        
-//         let fadeInDirection = fadeInElement.dataset.fadeineffectdirection;
+    let fadeInElements = document.querySelectorAll("[data-fadeInEffectElementId="+ fadeInContainerElementId +"]");
+    
+    fadeInElements.forEach(fadeInElement => {
+      let offset = fadeInElement.offsetTop + fadeInElement.scrollHeight;
+      
+      if(top >= offset) {
+        let fadeInDirection = fadeInElement.dataset.fadeineffectdirection;
 
-//         switch (fadeInDirection) {
-//           case 'top':
-//             fadeInElement.classList.add("fadeInTop");
-//             break;
-//           case 'bottom':
-//             fadeInElement.classList.add("fadeInBottom");
-//             break;
-//           case 'left':
-//             fadeInElement.classList.add("fadeInLeft");
-//             break;
-//           case 'right':
-//             fadeInElement.classList.add("fadeInRight");
-//           break;
-//         }
-//       });
-//     }
-//   });
-// }
+        switch (fadeInDirection) {
+          case 'top':
+            fadeInElement.classList.add("fadeInTop");
+            break;
+          case 'bottom':
+            fadeInElement.classList.add("fadeInBottom");
+            break;
+          case 'left':
+            fadeInElement.classList.add("fadeInLeft");
+            break;
+          case 'right':
+            fadeInElement.classList.add("fadeInRight");
+          break;
+        }
+      }});
+  });
+
+    // let fadeInIdContainerElement = document.querySelector("[data-fadeInEffectId=" + id + "]")
+
+    // console.log(fadeInIdContainerElement);
+    
+    // if(top >= offset) {
+    //   fadeInElements.forEach(fadeInElement => {
+        
+    //     let fadeInDirection = fadeInElement.dataset.fadeineffectdirection;
+
+    //     switch (fadeInDirection) {
+    //       case 'top':
+    //         fadeInElement.classList.add("fadeInTop");
+    //         break;
+    //       case 'bottom':
+    //         fadeInElement.classList.add("fadeInBottom");
+    //         break;
+    //       case 'left':
+    //         fadeInElement.classList.add("fadeInLeft");
+    //         break;
+    //       case 'right':
+    //         fadeInElement.classList.add("fadeInRight");
+    //       break;
+    //     }
+    //   });
+    // }
+  }
 
 
 
