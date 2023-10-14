@@ -52,7 +52,6 @@ function fadeInEffect() {
   fadeInContainerElements.forEach(fadeInContainerElement => {
 
     let fadeInContainerElementId = fadeInContainerElement.dataset.fadeineffectcontainerid;
-    let height = fadeInContainerElement.offsetHeight;
     let top = window.scrollY + window.innerHeight;
     
     let fadeInElements = document.querySelectorAll("[data-fadeInEffectElementId="+ fadeInContainerElementId +"]");
@@ -79,64 +78,5 @@ function fadeInEffect() {
         }
       }});
   });
-
-    // let fadeInIdContainerElement = document.querySelector("[data-fadeInEffectId=" + id + "]")
-
-    // console.log(fadeInIdContainerElement);
-    
-    // if(top >= offset) {
-    //   fadeInElements.forEach(fadeInElement => {
-        
-    //     let fadeInDirection = fadeInElement.dataset.fadeineffectdirection;
-
-    //     switch (fadeInDirection) {
-    //       case 'top':
-    //         fadeInElement.classList.add("fadeInTop");
-    //         break;
-    //       case 'bottom':
-    //         fadeInElement.classList.add("fadeInBottom");
-    //         break;
-    //       case 'left':
-    //         fadeInElement.classList.add("fadeInLeft");
-    //         break;
-    //       case 'right':
-    //         fadeInElement.classList.add("fadeInRight");
-    //       break;
-    //     }
-    //   });
-    // }
-  }
-
-
-
-// const observer = new IntersectionObserver(entries => {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       let fadeInElements = document.querySelectorAll("[data-fadeInDirection]");
-//       fadeInElements.forEach(fadeInElement => {
-//         let direction = fadeInElement.dataset.fadeindirection;
-//         console.log(fadeInElement);
-//         switch (direction) {
-//           case 'top':
-//             fadeInElement.classList.add("fadeInTop");
-//             break;
-//           case 'bottom':
-//             fadeInElement.classList.add("fadeInBottom");
-//             break;
-//           case 'left':
-//             fadeInElement.classList.add("fadeInLeft");
-//             break;
-//           case 'right':
-//             fadeInElement.classList.add("fadeInRight");
-//           break;
-//         }
-//       });
-//     };
-//   });
-// });
-
-// const fadeInElementsContainers = document.querySelectorAll("[data-fadeIn]");
-// fadeInElementsContainers.forEach(fadeInElementsContainer => {
-//   observer.observe(fadeInElementsContainer);
-// })
+}
 
